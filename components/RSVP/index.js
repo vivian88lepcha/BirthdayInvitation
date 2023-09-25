@@ -2,6 +2,7 @@ import Image from 'next/image';
 import React, { useState } from 'react'
 import SimpleReactValidator from 'simple-react-validator';
 import SectionTitle from '../../components/SectionTitle'
+import { useForm } from '@formcarry/react';
 
 import shape1 from '/public/images/rsvp/shape1.png'
 import shape2 from '/public/images/rsvp/shape2.png'
@@ -13,37 +14,58 @@ const RSVP = (props) => {
         email: '',
         address: '',
         meal: '',
-        attend: '',
-        guest: ''
+        attend: 'attend' // Set a default value for attend
     });
-    const [validator] = useState(new SimpleReactValidator({
-        className: 'errorMessage'
-    }));
-    const changeHandler = e => {
-        setForms({ ...forms, [e.target.name]: e.target.value })
+
+    const [submitted, setSubmitted] = useState(false);
+    const [error, setError] = useState('');
+
+    const validator = new SimpleReactValidator({
+        className: 'errorMessage',
+    });
+    const changeHandler = (e) => {
+        const { name, value } = e.target;
+        setForms({ ...forms, [name]: value });
+        validator.showMessages(); // Always show messages on change
+    };
+
+    const submitHandler = (e) => {
+        e.preventDefault();
+
         if (validator.allValid()) {
+            // Hide messages before sending the form
             validator.hideMessages();
+
+            // Replace this with your own unique endpoint URL
+            fetch('https://formcarry.com/s/LUcDb9nowe', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Accept: 'application/json',
+                },
+                body: JSON.stringify(forms),
+            })
+                .then((res) => res.json())
+                .then((res) => {
+                    if (res.code === 200) {
+                        setSubmitted(true);
+                    } else {
+                        setError(res.message);
+                    }
+                })
+                .catch((error) => setError(error));
         } else {
             validator.showMessages();
         }
     };
 
-    const submitHandler = e => {
-        e.preventDefault();
-        if (validator.allValid()) {
-            validator.hideMessages();
-            setForms({
-                name: '',
-                email: '',
-                address: '',
-                meal: '',
-                attend: '',
-                guest: ''
-            })
-        } else {
-            validator.showMessages();
-        }
-    };
+    if (error) {
+        return <p>{error}</p>;
+    }
+
+    if (submitted) {
+        return <p>We've received your message, thank you for contacting us!</p>;
+    }
 
     return (
         <section className={`wpo-contact-section ${props.pt}`} id="RSVP">
@@ -84,23 +106,6 @@ const RSVP = (props) => {
                                     <input type="radio" id="not" name="radio-group" />
                                     <label htmlFor="not">Sorry, I can’t come</label>
                                 </p>
-                            </div>
-                            <div className="form-field">
-                                <select
-                                    onBlur={(e) => changeHandler(e)}
-                                    onChange={(e) => changeHandler(e)}
-                                    value={forms.guest}
-                                    type="text"
-                                    className="form-control"
-                                    name="guest">
-                                    <option>Number Of Guests</option>
-                                    <option>01</option>
-                                    <option>02</option>
-                                    <option>03</option>
-                                    <option>04</option>
-                                    <option>05</option>
-                                </select>
-                                {validator.message('guest', forms.guest, 'required')}
                             </div>
                             <div className="form-field">
                                 <input
