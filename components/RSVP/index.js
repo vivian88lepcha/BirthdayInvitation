@@ -12,7 +12,6 @@ const RSVP = (props) => {
     const [forms, setForms] = useState({
         name: '',
         email: '',
-        address: '',
         meal: '',
         attend: 'attend' // Set a default value for attend
     });
@@ -24,8 +23,16 @@ const RSVP = (props) => {
         className: 'errorMessage',
     });
     const changeHandler = (e) => {
-        const { name, value } = e.target;
-        setForms({ ...forms, [name]: value });
+        const { name, value, type } = e.target;
+    
+        if (type === 'radio') {
+            // If the input type is 'radio', set the value directly
+            setForms({ ...forms, [name]: value });
+        } else {
+            // For other input types, update the state as usual
+            setForms({ ...forms, [name]: value });
+        }
+    
         validator.showMessages(); // Always show messages on change
     };
 
@@ -99,24 +106,27 @@ const RSVP = (props) => {
                             </div>
                             <div className="radio-buttons">
                                 <p>
-                                    <input type="radio" id="attend" name="radio-group" defaultChecked />
+                                    <input
+                                        type="radio"
+                                        id="attend"
+                                        name="attend"
+                                        value="attend" // Set the value for the 'attend' option
+                                        checked={forms.attend === 'attend'} // Check if 'attend' is selected
+                                        onChange={changeHandler}
+                                    />
                                     <label htmlFor="attend">Yes, I will be there</label>
                                 </p>
                                 <p>
-                                    <input type="radio" id="not" name="radio-group" />
+                                    <input
+                                        type="radio"
+                                        id="not"
+                                        name="attend"
+                                        value="not" // Set the value for the 'not' option
+                                        checked={forms.attend === 'not'} // Check if 'not' is selected
+                                        onChange={changeHandler}
+                                    />
                                     <label htmlFor="not">Sorry, I can’t come</label>
                                 </p>
-                            </div>
-                            <div className="form-field">
-                                <input
-                                    value={forms.attend}
-                                    type="text"
-                                    name="attend"
-                                    onBlur={(e) => changeHandler(e)}
-                                    onChange={(e) => changeHandler(e)}
-                                    className="form-control"
-                                    placeholder="What Will You Be Attending" />
-                                {validator.message('attend', forms.attend, 'required')}
                             </div>
                             <div className="form-field">
                                 <select
