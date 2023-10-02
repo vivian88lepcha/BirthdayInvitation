@@ -1,9 +1,9 @@
 {
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "dev": "next dev --legacy-peer-deps",
+    "build": "next build --legacy-peer-deps",
+    "start": "next start --legacy-peer-deps"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
