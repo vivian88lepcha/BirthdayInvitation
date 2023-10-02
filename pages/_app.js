@@ -15,9 +15,11 @@ import '../styles/sass/style.scss'
 import Head from "next/head";
 
 export const metadata = {
-  title: '...',
-  description: '...',
-  image: '/public/images/slider/_Z060213.jpg'
+  openGraph: {
+    title: 'Ivaan Shynon Lepcha',
+    description: 'Birthday Invitation',
+    images: ['/public/images/slider/_Z060213.jpg']
+  }
 }
 
 function MyApp({ Component, pageProps }) {
