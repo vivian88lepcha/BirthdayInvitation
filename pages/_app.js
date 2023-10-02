@@ -14,14 +14,6 @@ import 'photoswipe/dist/photoswipe.css'
 import '../styles/sass/style.scss'
 import Head from "next/head";
 
-export const metadata = {
-  openGraph: {
-    title: 'Ivaan Shynon Lepcha',
-    description: 'Birthday Invitation',
-    images: ['/public/images/slider/_Z060213.jpg']
-  }
-}
-
 function MyApp({ Component, pageProps }) {
   return (
     <div>
