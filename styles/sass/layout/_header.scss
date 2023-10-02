@@ -537,6 +537,7 @@
 		padding: 10px 25px;
 		text-transform: uppercase;
 		font-weight: 500;
+		cursor: pointer;
 
 		@media(max-width:1400px) {
 			padding: 10px 15px;
@@ -1851,7 +1852,7 @@ ul.smothscroll {
     list-style: none;
     z-index: 99999;
 }
-ul.smothscroll a {
+ul.smothscroll a , ul.smothscroll button {
     width: 45px;
     height: 45px;
     line-height: 45px;
@@ -1862,7 +1863,7 @@ ul.smothscroll a {
     background-color: rgba(214, 99, 113, 0.7);
     border: 2px solid #D66371;
 }
-ul.smothscroll a:hover {
+ul.smothscroll a:hover, ul.smothscroll button:hover {
     background-color: #D66371;
     color: #fff;
 }

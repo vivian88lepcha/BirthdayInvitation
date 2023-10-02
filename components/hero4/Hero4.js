@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import LocationMap from '../Modal'
+import LocationMap from '../Modal1'
 import shape1 from '/public/images/slider/flower1.png'
 import shape2 from '/public/images/slider/flower2.png'
 

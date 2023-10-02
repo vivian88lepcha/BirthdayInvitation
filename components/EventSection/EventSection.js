@@ -1,27 +1,24 @@
 import React from 'react'
-import LocationMap from '../Modal'
+import LocationParking from '../Modal1'
+import LocationVenue from '../Modal2'
 import SectionTitleS2 from '../SectionTitleS2'
 
 
 const Events = [
     {
-        title:'The Reception',
-        li1:'Monday, 25 Sep, 2023 1:00 PM – 4:30 PM',
-        li2:'Estern Star Plaza, Road 123, USA',
-        li3:'+1 234-567-8910'
+        title:'Parking Location',
+        li1:'Saturday, 21st October, 2023, Parking is Free for 2hrs ',
+        li2:'Dieselvej 40,',
+        li3:'Kobenhavn SV, 2450',
+        map: <LocationParking />
     },
     {
-        title:'The Ceremony',
-        li1:'Monday, 25 Sep, 2023 1:00 PM – 4:30 PM',
-        li2:'Estern Star Plaza, Road 123, USA',
-        li3:'+1 234-567-8910'
-    },
-    {
-        title:'Wedding Party',
-        li1:'Monday, 25 Sep, 2023 1:00 PM – 4:30 PM',
-        li2:'Estern Star Plaza, Road 123, USA',
-        li3:'+1 234-567-8910'
-    },
+        title:'The Party Location',
+        li1:'Saturday, 21st October, 2023, 4:00 PM',
+        li2:'Teglholmsgade 70A, Next to Home',
+        li3:'Kobenhavn SV, 2450',
+        map: <LocationVenue />
+    }
 
 ]
 
@@ -33,7 +30,7 @@ const EventSection = (props) => {
                 <div className="wpo-event-wrap">
                     <div className="row">
                         {Events.map((event, eitem) => (
-                            <div className="col col-lg-4 col-md-6 col-12" key={eitem}>
+                            <div className="col col-lg-6 col-md-6 col-12" key={eitem}>
                                 <div className="wpo-event-item">
                                     <div className="wpo-event-text">
                                         <h2>{event.title}</h2>
@@ -41,7 +38,7 @@ const EventSection = (props) => {
                                             <li>{event.li1}</li>
                                             <li>{event.li2}</li>
                                             <li>{event.li3}</li>
-                                            <li><LocationMap/></li>
+                                            <li>{event.map}</li>
                                         </ul>
                                     </div>
                                 </div>

@@ -4,7 +4,7 @@ import SectionTitle from "../SectionTitle";
 import timg1 from '/public/images/team/1month.jpeg'
 import timg2 from '/public/images/team/1st.jpeg'
 import timg3 from '/public/images/team/2nd.jpg'
-import timg4 from '/public/images/team/4th.jpg'
+import timg4 from '/public/images/team/3rd.jpg'
 import timg5 from '/public/images/team/4th.jpg'
 import timg6 from '/public/images/team/5th.jpeg'
 import timg7 from '/public/images/team/6th.jpg'

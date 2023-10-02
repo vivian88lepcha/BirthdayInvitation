@@ -65,7 +65,8 @@
 	}
 
 	@media(max-width:991px) {
-		padding-bottom: 30px;
+		padding-bottom: 20px;
+		
 	}
 
 	.couple-area {
@@ -775,7 +776,7 @@
 
 .wpo-contact-section,
 .wpo-contact-section-s2 {
-	padding-bottom: 200px;
+	padding-bottom: 90px;
 	position: relative;
 	z-index: 1;
 	padding-top: 90px;
@@ -791,16 +792,18 @@
 	}
 
 	@media(max-width:991px) {
-		padding-bottom: 180px;
+		padding-bottom: 50px;
+		padding-top: 50px;
 	}
 
 	@media(max-width:767px) {
-		padding-bottom: 140px;
+		padding-bottom: 50px;
+		padding-top: 50px;
 	}
 
 	@media(max-width:575px) {
-		padding-bottom: 80px;
-		padding-top: 10px;
+		padding-bottom: 50px;
+		padding-top: 50px;
 	}
 
 	.wpo-contact-section-wrapper {

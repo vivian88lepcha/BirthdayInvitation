@@ -11,8 +11,7 @@ const RSVP = (props) => {
 
     const [forms, setForms] = useState({
         name: '',
-        email: '',
-        meal: '',
+        preferences: '',
         attend: 'attend' // Set a default value for attend
     });
 
@@ -70,85 +69,68 @@ const RSVP = (props) => {
         return <p>{error}</p>;
     }
 
-    if (submitted) {
-        return <p>We've received your message, thank you for contacting us!</p>;
-    }
-
     return (
         <section className={`wpo-contact-section ${props.pt}`} id="RSVP">
             <div className="container">
                 <div className="wpo-contact-section-wrapper">
                     <div className="wpo-contact-form-area">
                         <SectionTitle MainTitle={'Are you attending?'} />
-
-                        <form onSubmit={(e) => submitHandler(e)} className="contact-validation-active" >
-                            <div className="form-field">
-                                <input
-                                    value={forms.name}
-                                    type="text"
-                                    name="name"
-                                    onBlur={(e) => changeHandler(e)}
-                                    onChange={(e) => changeHandler(e)}
-                                    className="form-control"
-                                    placeholder="Your Name" />
-                                {validator.message('name', forms.name, 'required|alpha_space')}
-                            </div>
-                            <div className="form-field">
-                                <input
-                                    value={forms.email}
-                                    type="email"
-                                    name="email"
-                                    onBlur={(e) => changeHandler(e)}
-                                    onChange={(e) => changeHandler(e)}
-                                    className="form-control"
-                                    placeholder="Your Email" />
-                                {validator.message('email', forms.email, 'required|email')}
-                            </div>
-                            <div className="radio-buttons">
-                                <p>
+                        { submitted ? <p>We've received your message, Thank you for your response!</p> 
+                        : 
+                            <form onSubmit={(e) => submitHandler(e)} className="contact-validation-active" >
+                                <div className="form-field">
                                     <input
-                                        type="radio"
-                                        id="attend"
-                                        name="attend"
-                                        value="attend" // Set the value for the 'attend' option
-                                        checked={forms.attend === 'attend'} // Check if 'attend' is selected
-                                        onChange={changeHandler}
-                                    />
-                                    <label htmlFor="attend">Yes, I will be there</label>
-                                </p>
-                                <p>
-                                    <input
-                                        type="radio"
-                                        id="not"
-                                        name="attend"
-                                        value="not" // Set the value for the 'not' option
-                                        checked={forms.attend === 'not'} // Check if 'not' is selected
-                                        onChange={changeHandler}
-                                    />
-                                    <label htmlFor="not">Sorry, I can’t come</label>
-                                </p>
-                            </div>
-                            <div className="form-field">
-                                <select
-                                    onBlur={(e) => changeHandler(e)}
-                                    onChange={(e) => changeHandler(e)}
-                                    value={forms.meal}
-                                    type="text"
-                                    className="form-control"
-                                    name="meal">
-                                    <option>Meal Preferences</option>
-                                    <option>Chicken Soup</option>
-                                    <option>Motton Kabab</option>
-                                    <option>Chicken BBQ</option>
-                                    <option>Mix Salad</option>
-                                    <option>Beef Ribs </option>
-                                </select>
-                                {validator.message('meal', forms.meal, 'required')}
-                            </div>
-                            <div className="submit-area">
-                                <button type="submit" className="theme-btn">Submit Now</button>
-                            </div>
-                        </form >
+                                        value={forms.name}
+                                        type="text"
+                                        name="name"
+                                        onBlur={(e) => changeHandler(e)}
+                                        onChange={(e) => changeHandler(e)}
+                                        className="form-control"
+                                        placeholder="Your Name" />
+                                    {validator.message('name', forms.name, 'required|alpha_space')}
+                                </div>
+                                <div className="radio-buttons">
+                                    <p>
+                                        <input
+                                            type="radio"
+                                            id="attend"
+                                            name="attend"
+                                            value="attend" // Set the value for the 'attend' option
+                                            checked={forms.attend === 'attend'} // Check if 'attend' is selected
+                                            onChange={changeHandler}
+                                        />
+                                        <label htmlFor="attend">Yes, I will be there</label>
+                                    </p>
+                                    <p>
+                                        <input
+                                            type="radio"
+                                            id="not"
+                                            name="attend"
+                                            value="not" // Set the value for the 'not' option
+                                            checked={forms.attend === 'not'} // Check if 'not' is selected
+                                            onChange={changeHandler}
+                                        />
+                                        <label htmlFor="not">Sorry, I can’t come</label>
+                                    </p>
+                                </div>
+                                <div className="form-field">
+                                    <select
+                                        onBlur={(e) => changeHandler(e)}
+                                        onChange={(e) => changeHandler(e)}
+                                        value={forms.preferences}
+                                        type="text"
+                                        className="form-control"
+                                        name="preferences">
+                                        <option>Vegetarian</option>
+                                        <option>Non-Vegetarian</option>
+                                    </select>
+                                    {validator.message('preferences', forms.preferences, 'required')}
+                                </div>
+                                <div className="submit-area">
+                                    <button type="submit" className="theme-btn">Submit Now</button>
+                                </div>
+                            </form >
+                        }
                     </div>
                 </div>
             </div>

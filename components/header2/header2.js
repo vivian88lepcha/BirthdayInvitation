@@ -1,12 +1,9 @@
 import React from 'react'
-import Link from 'next/link'
+import NavLink from 'next/link'
+import { Link } from 'react-scroll'
 
 
 const Header2 = (props) => {
-
-  const ClickHandler = () => {
-    window.scrollTo(10, 0);
-  }
 
   return (
     <header id="header">
@@ -18,8 +15,8 @@ const Header2 = (props) => {
               </div>
               <div className="col-lg-2 col-md-6 col-6">
                 <div className="navbar-header">
-                  <Link className="navbar-brand logo" href='/home4'><small>Ivaan</small><span><i
-                    className="fi flaticon-dove"></i></span></Link>
+                  <NavLink className="navbar-brand logo" href='/'><small>Ivaan</small><span><i
+                    className="fi flaticon-dove"></i></span></NavLink>
                 </div>
               </div>
               <div className="col-lg-8 col-md-1 col-1">
@@ -27,7 +24,7 @@ const Header2 = (props) => {
               </div>
               <div className="col-lg-2 d-none d-lg-block">
                 <div className="header-right ">
-                  <Link className="theme-btn" href="/rsvp"><span className="text">Attend Now</span> </Link>
+                  <Link activeClass="active" to="RSVP" spy={true} smooth={true} duration={500} className="theme-btn"><span className="text">Attend</span> </Link>
                 </div>
               </div>
             </div>

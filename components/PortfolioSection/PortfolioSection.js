@@ -8,17 +8,27 @@ const Portfolios = [
         Pimg: '/images/portfolio/_Z060288.jpg',
     },
     {
-        Pimg: '/images/portfolio/_Z060310.jpg',
+        Pimg: '/images/portfolio/_Z060240.jpg',
     },
     {
-        Pimg: '/images/portfolio/_Z060240.jpg',
+        Pimg: '/images/portfolio/_Z060310.jpg',
     },
     {
         Pimg: '/images/portfolio/_Z060213.jpg',
     },
     {
+        Pimg: '/images/portfolio/_Z060197.jpg',
+    },
+    {
         Pimg: '/images/portfolio/_Z060275.jpg',
+    },
+    {
+        Pimg: '/images/portfolio/_Z060320.jpg',
+    },
+    {
+        Pimg: '/images/portfolio/_Z060259.jpg',
     }
+    
 ]
 
 const PortfolioSection = (props) => {
