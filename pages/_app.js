@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }) {
         <title>Ivaan Shynon Lepcha</title>
         <meta property="og:title" content="Ivaan Shynon Lepcha"></meta>
         <meta property="og:type" content="website"></meta>
-        <meta property="og:image" content="/public/images/slider/_Z060213.jpg"></meta>
+        <meta property="og:image" content="../public/images/slider/_Z060213.jpg"></meta>
       </Head>
       <Component {...pageProps} />
       <ToastContainer />
