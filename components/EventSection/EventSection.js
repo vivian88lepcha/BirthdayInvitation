@@ -7,8 +7,8 @@ import SectionTitleS2 from '../SectionTitleS2'
 const Events = [
     {
         title:'Parking Location',
-        li1:'Saturday, 21st October, 2023, Parking is Free for 2hrs ',
-        li2:'Dieselvej 40,',
+        li1:'Saturday, 21st October, 2023,',
+        li2:'Dieselvej 40, Parking is Free for 2hrs',
         li3:'Kobenhavn SV, 2450',
         map: <LocationParking />
     },

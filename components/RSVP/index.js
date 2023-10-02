@@ -75,7 +75,7 @@ const RSVP = (props) => {
                 <div className="wpo-contact-section-wrapper">
                     <div className="wpo-contact-form-area">
                         <SectionTitle MainTitle={'Are you attending?'} />
-                        { submitted ? <p>We've received your message, Thank you for your response!</p> 
+                        { submitted ? <p className="text-center">We've received your message, Thank you for your response!</p> 
                         : 
                             <form onSubmit={(e) => submitHandler(e)} className="contact-validation-active" >
                                 <div className="form-field">
@@ -124,7 +124,6 @@ const RSVP = (props) => {
                                         <option>Vegetarian</option>
                                         <option>Non-Vegetarian</option>
                                     </select>
-                                    {validator.message('preferences', forms.preferences, 'required')}
                                 </div>
                                 <div className="submit-area">
                                     <button type="submit" className="theme-btn">Submit Now</button>
