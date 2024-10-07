@@ -3,22 +3,21 @@
 ----------------------------*/
 
 @font-face {
-    font-family: 'Donalia';
-    src: url('../../../fonts/Donalia.eot');
-    src: url('../../../fonts/Donalia.eot?#iefix') format('embedded-opentype'),
-         url('../../../fonts/Donalia.woff2') format('woff2'),
-         url('../../../fonts/Donalia.woff') format('woff'),
-         url('../../../fonts/Donalia.ttf')  format('truetype'),
+  font-family: "Donalia";
+  src: url("../../../fonts/Donalia.eot");
+  src: url("../../../fonts/Donalia.eot?#iefix") format("embedded-opentype"),
+    url("../../../fonts/Donalia.woff2") format("woff2"),
+    url("../../../fonts/Donalia.woff") format("woff"),
+    url("../../../fonts/Donalia.ttf") format("truetype");
 }
 
 // fonts
 $base-font-size: 15;
-$base-font: 'Jost', sans-serif;
-$heading-font: 'Donalia';
-
+$base-font: "Jost", sans-serif;
+$heading-font: "Donalia";
 
 // color
-$dark-gray: #06002E;
+$dark-gray: #06002e;
 $body-color: #525252;
 $white: #fff;
 $light: #8188a9;
@@ -26,8 +25,8 @@ $black: #000;
 $small-black: #333;
 $cyan: #525252;
 
-$theme-primary-color: #D66371;
-$theme-primary-color-s2: #DFCACC;
+$theme-primary-color: hsl(218, 58%, 61%);
+$theme-primary-color-s2: #dfd9ca;
 $body-bg-color: #fff;
 $section-bg-color: #fbf8f8;
 $text-color: #585858;

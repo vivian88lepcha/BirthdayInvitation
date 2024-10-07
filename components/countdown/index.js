@@ -1,8 +1,8 @@
-import React from 'react'
+import React from "react";
 const { useState, useEffect } = React;
 
 const TimeCountDown = () => {
-  const [countdownDate] = useState(new Date('10/21/2023').getTime());
+  const [countdownDate] = useState(new Date("10/21/2024").getTime());
   const [state, setState] = useState({
     days: 0,
     hours: 0,
@@ -26,10 +26,10 @@ const TimeCountDown = () => {
 
       let days = Math.floor(distanceToDate / (1000 * 60 * 60 * 24));
       let hours = Math.floor(
-        (distanceToDate % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+        (distanceToDate % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
       );
       let minutes = Math.floor(
-        (distanceToDate % (1000 * 60 * 60)) / (1000 * 60),
+        (distanceToDate % (1000 * 60 * 60)) / (1000 * 60)
       );
       let seconds = Math.floor((distanceToDate % (1000 * 60)) / 1000);
 
@@ -50,21 +50,21 @@ const TimeCountDown = () => {
 
   return (
     <div>
-      <div className='countdown-wrapper'>
-        <div className='time-section'>
-          <div className='time'>{state.days || '0'}</div>
+      <div className="countdown-wrapper">
+        <div className="time-section">
+          <div className="time">{state.days || "0"}</div>
           <small className="time-text">Days</small>
         </div>
-        <div className='time-section'>
-          <div className='time'>{state.hours || '00'}</div>
+        <div className="time-section">
+          <div className="time">{state.hours || "00"}</div>
           <small className="time-text">Hours</small>
         </div>
-        <div className='time-section'>
-          <div className='time'>{state.minutes || '00'}</div>
+        <div className="time-section">
+          <div className="time">{state.minutes || "00"}</div>
           <small className="time-text">Min</small>
         </div>
-        <div className='time-section'>
-          <div className='time'>{state.seconds || '00'}</div>
+        <div className="time-section">
+          <div className="time">{state.seconds || "00"}</div>
           <small className="time-text">Sec</small>
         </div>
       </div>
@@ -73,4 +73,3 @@ const TimeCountDown = () => {
 };
 
 export default TimeCountDown;
-
