@@ -9,7 +9,7 @@ import timg9 from "/public/images/team/8th.jpg";
 import timg11 from "/public/images/team/10th.jpg";
 import timg12 from "/public/images/team/11th.jpg";
 import timg13 from "/public/images/team/13th.JPG";
-import timg14 from "/public/images/team/14th.JPG";
+import timg14 from "/public/images/team/14th.jpg";
 import timg15 from "/public/images/team/15th.JPG";
 import timg16 from "/public/images/team/16th.jpg";
 import timg17 from "/public/images/team/17th.jpg";
